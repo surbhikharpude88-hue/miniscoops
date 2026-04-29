@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ice Cream Menu</title>
+
+<style>
+    body {
+        background-color: #fff8f8;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 45px;
+        margin: 20px 0;
+        color: #333;
+    }
+
+    hr {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    /* Search bar */
+    .search-container {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .search-container input {
+        width: 300px;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .search-container button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: pink;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        color: black;
+        font-weight: bold;
+    }
+
+    .search-container button:hover {
+        background-color: #ffb6c1;
+        color: white;
+    }
+
+    /* Product cards */
+    .products-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .product-card {
+        text-align: center;
+        width: 230px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        background: #fff;
+        transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .product-card h2 {
+        font-size: 20px;
+        margin: 10px 0 5px;
+        color: #333;
+    }
+
+    .product-card p {
+        font-size: 18px;
+        color: blue;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        font-size: 18px;
+        background-color;
+        padding: 8px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        color: black;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ffc;
+        color: white;
+    }
+
+    /* 🌈 Unique Back Button Style */
+    .back-btn {
+        font-size: 18px;
+        background-color: pink;
+        padding: 8px 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        color: black;
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ffb6c1;
+        color: white;
+    }
+    .back {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    @media (max-width: 768px) {
+        .product-card {
+            width: 45%;
+        }
+        .search-container input {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-card {
+            width: 80%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Header Image -->
+<div style="text-align:center;">
+    <img style="width:33%;" src="D:\ice cream\images\main-removebg-preview.png" alt="Ice Cream Logo">
+</div>
+
+<h1>Our Flavors, Your Happiness<br>Scoop into the Menu</h1>
+<hr>
+<br><a href="🛒cart.html">🛒cart</a>
+
+<!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for ice cream flavor...">
+    <button onclick="searchProducts()">Search</button>
+</div>
+
+<!-- Products Section -->
+<section id="menu">
+    <h1>Our Scoops</h1>
+
+    <div class="products-container" id="productList">
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\vanilla-strawberry-and-chocolate-ice-cream-scoops-with-wafer-stick-in-sundae-bowl-or-ice-cream-in-sundae-dish-isolated-on-white-background-generative-ai-photo.jpg" alt="Ice cream sundae">
+            <h2>Ice-cream Scoops with Wafer Stick</h2>
+            <p>₹250</p>
+            <button class="btn" onclick="addToCart('Ice-cream Scoops with Wafer Stick', 250)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Black+Cherry.jpg" alt="Black Cherry">
+            <h2>Black Cherry</h2>
+            <p>₹100</p>
+            <button class="btn" onclick="addToCart('Black Cherry', 100)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Brownie.jpg" alt="Brownie">
+            <h2>Brownie</h2>
+            <p>₹150</p>
+            <button class="btn" onclick="addToCart('Brownie', 150)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Butter+Pecan.jpg" alt="Butter Pecan">
+            <h2>Butter Pecan</h2>
+            <p>₹110</p>
+            <button class="btn" onclick="addToCart('Butter Pecan', 110)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Chocolate.jpg" alt="Chocolate">
+            <h2>Chocolate</h2>
+            <p>₹100</p>
+            <button class="btn" onclick="addToCart('Chocolate', 100)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Cotton+Candy.jpg" alt="Cotton Candy">
+            <h2>Cotton Candy</h2>
+            <p>₹125</p>
+            <button class="btn" onclick="addToCart('Cotton Candy', 125)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Mint+Chip.jpg" alt="Mint Chip">
+            <h2>Mint Chip</h2>
+            <p>₹90</p>
+            <button class="btn" onclick="addToCart('Mint Chip', 90)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\OO+Oreo.jpg" alt="Oreo">
+            <h2>Oreo</h2>
+            <p>₹160</p>
+            <button class="btn" onclick="addToCart('Oreo', 160)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Salted+Caramel.jpg" alt="Salted Caramel">
+            <h2>Salted Caramel</h2>
+            <p>₹90</p>
+            <button class="btn" onclick="addToCart('Salted Caramel', 90)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Strawberry.jpg" alt="Strawberry">
+            <h2>Strawberry</h2>
+            <p>₹80</p>
+            <button class="btn" onclick="addToCart('Strawberry', 80)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Vanila.jpg" alt="Vanilla">
+            <h2>Vanilla</h2>
+            <p>₹70</p>
+            <button class="btn" onclick="addToCart('Vanilla', 70)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="D:\ice cream\images\Strawberry+Cheesecake.jpg" alt="Strawberry Cheesecake">
+            <h2>Strawberry Cheesecake</h2>
+            <p>₹90</p>
+            <button class="btn" onclick="addToCart('Strawberry Cheesecake', 90)">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <!-- 🌈 Back to Home Button (Styled Differently) -->
+    <div class="back">
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+</section>
+
+<hr>
+
+<script>
+    // Add to cart function
+    function addToCart(name, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(name + " added to cart!");
+    }
+
+    // Search filter function
+    function searchProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.getElementsByClassName('product-card');
+        for (let i = 0; i < products.length; i++) {
+            const title = products[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+            products[i].style.display = title.includes(input) ? "block" : "none";
+        }
+    }
+</script>
+
+</body>
+</html>
